@@ -1,5 +1,9 @@
 /*
+<<<<<<< HEAD
  * Copyright (c) 2013-2015, The Linux Foundation. All rights reserved.
+=======
+ * Copyright (c) 2013-2014, The Linux Foundation. All rights reserved.
+>>>>>>> 3858851... Updates from G3 for cpu-boost
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 and
