@@ -115,9 +115,9 @@ int cmd_num;
 #endif
 
 #ifdef CONFIG_LGE_DEVFREQ_DFPS
-#define MIN_REFRESH_RATE 50
+#define MIN_REFRESH_RATE 60
 #else
-#define MIN_REFRESH_RATE 30
+#define MIN_REFRESH_RATE 60
 #endif
 
 DEFINE_LED_TRIGGER(bl_led_trigger);
