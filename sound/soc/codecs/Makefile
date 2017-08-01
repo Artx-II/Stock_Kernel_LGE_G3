@@ -235,3 +235,4 @@ obj-$(CONFIG_SND_SOC_TPA2028D_STEREO)	+= tpa2028d_stereo_speaker.o
 ifeq ($(CONFIG_SND_SOC_ES325_SLIM),y)
 obj-$(CONFIG_SND_SOC_ES325_SLIM) += es325.o
 endif
+obj-$(CONFIG_SOUND_CONTROL_HAX_3_GPL) += sound_control_3_gpl.o
