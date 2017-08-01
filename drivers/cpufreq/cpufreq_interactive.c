@@ -30,6 +30,7 @@
 #include <linux/kthread.h>
 #include <linux/slab.h>
 #include <linux/kernel_stat.h>
+#include <linux/touchboost.h>
 #include <asm/cputime.h>
 
 #ifdef CONFIG_LGE_PM_CPU_FREQ_GOV_LCDOFF
@@ -540,9 +541,9 @@ static void cpufreq_interactive_timer(unsigned long data)
 	loadadjfreq = (unsigned int)cputime_speedadj * 100;
 	cpu_load = loadadjfreq / pcpu->target_freq;
 	pcpu->prev_load = cpu_load;
-	boosted = boost_val || now < boostpulse_endtime;
+	boosted = boost_val || now < (last_input_time + get_input_boost_duration());
 
-	if (cpu_load >= go_hispeed_load || boosted) {
+	if (cpu_load >= go_hispeed_load) {
 		if(is_grid){
 			new_freq = choose_freq_grid(pcpu, loadadjfreq,cpu_load);
 		}
@@ -558,6 +559,11 @@ static void cpufreq_interactive_timer(unsigned long data)
 		}
 	} else {
 		new_freq = choose_freq(pcpu, loadadjfreq);
+
+	if (boosted) {
+		if (new_freq < input_boost_freq)
+			new_freq = input_boost_freq;
+	}
 
 		if (sync_freq && new_freq < sync_freq) {
 
