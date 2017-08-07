@@ -15,16 +15,16 @@ echo "Source cleaned";
 #Pre-Build configs
 DIR=~/Images; #Here's the path of your 1st folder for compiled kernels
 DIR2=~/Stock; #Here's the path of your 2nd folder for compiled kernels
-CPATH=arch/arm/configs;
+CPATH=arch/arm/configs; #Path of your defconfigs
 
 #Defconfigs
 if [ -e G3STOCK ]; then
-G3TMO=$CPATH/g3-tmo_us_defconfig; 
+G3TMO=$CPATH/g3-tmo_us_defconfig;
 G3ATT=$CPATH/g3-att_defconfig;
 G3CANADA=$CPATH/g3-bell_defconfig;
 G3INT=$CPATH/g3-global_com_defconfig;
 G3SPR=$CPATH/g3-spr_us_defconfig;
-G3VZW=$CPATH/g3-vzw_defconfig;;
+G3VZW=$CPATH/g3-vzw_defconfig;
 elif [ -e G3LOS ]; then
 G3TMO=$CPATH/lineageos_d851_defconfig;
 G3ATT=$CPATH/lineageos_d850_defconfig;
