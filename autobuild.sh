@@ -15,25 +15,24 @@ echo "Source cleaned";
 #Pre-Build configs
 DIR=~/Images; #Here's the path of your 1st folder for compiled kernels
 DIR2=~/Stock; #Here's the path of your 2nd folder for compiled kernels
-CPATH=arch/arm/configs; #Path of your defconfigs
 
 #Defconfigs
-if [ -e G3STOCK ]; then
-G3TMO=$CPATH/g3-tmo_us_defconfig;
-G3ATT=$CPATH/g3-att_defconfig;
-G3CANADA=$CPATH/g3-bell_defconfig;
-G3INT=$CPATH/g3-global_com_defconfig;
-G3SPR=$CPATH/g3-spr_us_defconfig;
-G3VZW=$CPATH/g3-vzw_defconfig;
+if [ -e ./G3STOCK ]; then
+G3TMO=g3-tmo_us_defconfig;
+G3ATT=g3-att_defconfig;
+G3CANADA=g3-bell_defconfig;
+G3INT=g3-global_com_defconfig;
+G3SPR=g3-spr_us_defconfig;
+G3VZW=g3-vzw_defconfig;
 elif [ -e G3LOS ]; then
-G3TMO=$CPATH/lineageos_d851_defconfig;
-G3ATT=$CPATH/lineageos_d850_defconfig;
-G3CANADA=$CPATH/lineageos_d852_defconfig;
-G3INT=$CPATH/lineageos_d855_defconfig;
-G3SPR=$CPATH/lineageos_ls990_defconfig;
-G3VZW=$CPATH/lineageos_vs985_defconfig;
-G3KOR=$CPATH/lineageos_f400_defconfig;
-G3DS=$CPATH/lineageos_dualsim_defconfig;
+G3TMO=lineageos_d851_defconfig;
+G3ATT=lineageos_d850_defconfig;
+G3CANADA=lineageos_d852_defconfig;
+G3INT=lineageos_d855_defconfig;
+G3SPR=lineageos_ls990_defconfig;
+G3VZW=lineageos_vs985_defconfig;
+G3KOR=lineageos_f400_defconfig;
+G3DS=lineageos_dualsim_defconfig;
 fi
 
 #This creates a kernel output folder if it doesn't exist
