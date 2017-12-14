@@ -53,7 +53,7 @@ static struct work_struct input_boost_work;
 static struct notifier_block notif;
 #endif
 
-static unsigned int boost_ms;
+static unsigned int boost_ms = 500;
 module_param(boost_ms, uint, 0644);
 
 static unsigned int sync_threshold;
