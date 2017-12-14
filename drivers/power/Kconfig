@@ -746,6 +746,7 @@ config CHARGER_UNIFIED_WLC_ALIGNMENT_IDT9025A
 	default n
 	help
 		wireless charger alignment
+
 config CHARGER_UNIFIED_WLC_ALIGNMENT_BQ5102X
 	tristate "wireless charger alignment"
 	select CHARGER_UNIFIED_WLC_ALIGNMENT

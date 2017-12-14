@@ -41,7 +41,7 @@ struct msm_thermal_data {
 
 #ifdef CONFIG_THERMAL_MONITOR
 extern int msm_thermal_init(struct msm_thermal_data *pdata);
-extern int msm_thermal_device_init(void);
+//extern int msm_thermal_device_init(void);
 extern int msm_thermal_set_frequency(uint32_t cpu, uint32_t freq,
 	bool is_max);
 #else
